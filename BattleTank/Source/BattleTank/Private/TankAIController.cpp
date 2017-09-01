@@ -2,6 +2,7 @@
 
 
 #include "../Public/TankAIController.h"
+#include "Engine/World.h"
 #include "../Public/Tank.h"
 
 void ATankAIController::BeginPlay()
