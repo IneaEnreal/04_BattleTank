@@ -12,6 +12,7 @@ class UTankBarrel;
 class UTankTurret;
 class AProjectile;
 
+
 UCLASS()
 class BATTLETANK_API ATank : public APawn
 {
@@ -26,6 +27,8 @@ public:
 	void Fire();
 
 	void AimAt(FVector HitLocation);
+
+	
 
 protected:
 	UTankAimingComponent* TankAimingComponent = nullptr;
