@@ -27,3 +27,10 @@ void UTankMovementComponent::IntendTurnRight(float Throw)
 
 }
 
+void UTankMovementComponent::RequestDirectMove(const FVector & MoveVelocity, bool bForceMaxSpeed)
+{
+	auto Name = GetOwner()->GetName();
+	UE_LOG(LogTemp, Warning, TEXT("%s move to :%s"), *Name, *(MoveVelocity.ToString()));
+
+}
+
