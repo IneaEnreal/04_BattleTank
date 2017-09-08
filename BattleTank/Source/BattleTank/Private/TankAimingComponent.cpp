@@ -33,7 +33,6 @@ void UTankAimingComponent::AimAt(FVector HitLocation, float LaunchSpeed)
 	/*auto OurTankName = GetOwner()->GetName();
 	auto BarrelLocation = Barrel->GetComponentLocation().ToString();*/
 	if (!Barrel) { return; }
-	if (!Turret) { return; }
 
 	FVector OutLaunchVelocity;
 	FVector StartLocation = Barrel->GetSocketLocation(FName("Projectile"));

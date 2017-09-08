@@ -9,6 +9,12 @@
 #include "TankMovementComponent.h"
 
 
+void ATank::BeginPlay()
+{
+	Super::BeginPlay();
+	UE_LOG(LogTemp, Warning, TEXT("THIS IS FROM C++"));
+
+}
 
 // Sets default values
 ATank::ATank()
@@ -17,8 +23,9 @@ ATank::ATank()
 	PrimaryActorTick.bCanEverTick = false;
 }
 
-void ATank::AimAt(FVector HitLocation) 
+void ATank::AimAt(FVector HitLocation)
 {
+	if (!TankAimingComponent) { return; }
 	TankAimingComponent->AimAt(HitLocation, LaunchSpeed);
 }
 

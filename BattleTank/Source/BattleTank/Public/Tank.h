@@ -31,6 +31,8 @@ protected:
 	UPROPERTY(BlueprintReadOnly)
 	UTankAimingComponent* TankAimingComponent = nullptr;
 
+	virtual void BeginPlay() override;
+
 private:
 	// Sets default values for this pawn's properties
 	ATank();
