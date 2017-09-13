@@ -25,6 +25,8 @@ void ATankAIController::Tick(float DeltaSeconds)// Tick
 	auto AimimgComponent = ControlledTank->FindComponentByClass<UTankAimingComponent>();
 	AimimgComponent->AimAt(PlayerTank->GetActorLocation());
 
+	// if aim or locked
+	if(AimimgComponent->GetFiringState() == EFiringState::Locked)
 	AimimgComponent->Fire();
 }
 
