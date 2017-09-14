@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "AIController.h"
+#include "GameFramework/Pawn.h"
 #include "TankAIController.generated.h"
 
 class ATank;
@@ -11,6 +12,8 @@ class ATank;
 /**
  * 
  */
+
+
 UCLASS()
 class BATTLETANK_API ATankAIController : public AAIController
 {
@@ -24,9 +27,11 @@ protected:
 private:
 	virtual void Tick(float DeltaSeconds);
 
+	virtual void SetPawn(APawn* InPawn) override;
+
 	virtual void BeginPlay() override;
 
+	UFUNCTION()
+	void OnTankDeath();
 
-	
-	
 };

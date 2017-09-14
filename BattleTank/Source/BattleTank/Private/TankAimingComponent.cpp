@@ -98,7 +98,7 @@ void UTankAimingComponent::AimAt(FVector HitLocation)
 
 void UTankAimingComponent::MoveBarrelTowards(FVector AimDirection)
 {
-	if (!ensure((Barrel || Turret))) { return; }
+	if (!ensure(Barrel) || !ensure(Turret)) { return; }
 
 	// Work-out difference between barrel rotation, and AimDirection
 	auto BarrelRotator = Barrel->GetForwardVector().Rotation();
@@ -120,7 +120,6 @@ void UTankAimingComponent::MoveBarrelTowards(FVector AimDirection)
 
 void UTankAimingComponent::Fire()
 {
-
 	if (FiringStatus == EFiringState::Locked || FiringStatus == EFiringState::Aiming)
 	{
 		//Spawn a projectile at the socket location on the barrel
